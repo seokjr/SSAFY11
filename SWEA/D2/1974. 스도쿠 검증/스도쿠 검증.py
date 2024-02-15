@@ -1,10 +1,10 @@
 # 가로를 쭉 돌면서 검사
 def checking_row(row):
-    cnt = 0
+    check = []
     for m in range(9):
-        cnt += arr[row][m]
+        check.append(arr[row][m])
     # 한 줄의 합이 45가 아니라면 중복되는 게 있으니깐 안되는 거
-    if cnt != 45:
+    if len(set(check)) != 9:
         temp = 0
     else:
         temp = 1
@@ -13,10 +13,10 @@ def checking_row(row):
 
 # 세로를 쭉 돌면서 검사
 def checking_column(column):
-    cnt = 0
+    check = []
     for m in range(9):
-        cnt += arr[m][column]
-    if cnt != 45:
+        check.append(arr[m][column])
+    if len(set(check)) != 9:
         temp = 0
     else:
         temp = 1
@@ -25,14 +25,14 @@ def checking_column(column):
 
 # 3 * 3을 돌면서 검사
 def checking3by3(row, column):
-    cnt = 0
+    check = []
     # 3으로 나눠서 어디부터 탐색할지 정해놓는다.
     x = row // 3
     y = column // 3
-    for m in range(3 * x, 3 * (x+1)):
-        for k in range(3 * y, 3 * (y+1)):
-            cnt += arr[m][k]
-    if cnt != 45:
+    for m in range(3 * x, 3 * (x + 1)):
+        for k in range(3 * y, 3 * (y + 1)):
+            check.append(arr[m][k])
+    if len(set(check)) != 9:
         temp = 0
     else:
         temp = 1
@@ -40,7 +40,7 @@ def checking3by3(row, column):
 
 
 T = int(input())
-for tc in range(1, T+1):
+for tc in range(1, T + 1):
     arr = [list(map(int, input().split())) for _ in range(9)]
     answer = 1
     for i in range(9):
