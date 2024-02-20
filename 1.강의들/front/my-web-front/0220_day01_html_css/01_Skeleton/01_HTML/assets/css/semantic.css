@@ -1,0 +1,38 @@
+* {
+    text-align: center;
+    color: white;
+    border-radius: 0.2rem;
+    margin: 0.3rem;
+  }
+
+  header {
+    background-color: blue;
+  }
+
+  nav {
+    background-color: green;
+    height: 2rem;
+  }
+
+  section {
+    background-color: pink;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+  }
+
+  article {
+    background-color: orange;
+    width: 70%;
+  }
+
+  aside {
+    background-color: red;
+    width: 30%;
+  }
+
+  footer {
+    background-color: brown;
+    height: 2rem;
+  }

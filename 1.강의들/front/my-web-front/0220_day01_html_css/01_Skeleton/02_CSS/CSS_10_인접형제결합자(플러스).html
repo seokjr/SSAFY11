@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10_인접형제결합자</title>
+    <style>
+      /* 결합자를 넣어보세요 */
+
+      #ssafy + .target {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>인접 형제 결합자 (Adjacent Sibling Combinator)</h2>
+    <h3>+ 을 사용합니다</h3>
+    <main>
+      <div id="ssafy">div 태그1</div>
+      <div class="target">div 태그2</div>
+      <p>p 태그</p>
+      <span class="target">span 태그1</span>
+      <ul>
+        <li>li 태그1</li>
+        <li><span class="target">li 태그2</span></li>
+        <li>li 태그3</li>
+        <li>li 태그4</li>
+        <li>li 태그5</li>
+      </ul>
+      <span class="target">span 태그2</span>
+    </main>
+  </body>
+</html>
