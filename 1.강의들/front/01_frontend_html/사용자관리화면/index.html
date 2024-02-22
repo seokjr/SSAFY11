@@ -3,55 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사용자 정보 관리 사이트</title>
     <link rel="stylesheet" href="css/main.css" />
-    <title>영화 정보 관리 사이트</title>
   </head>
   <body>
-    <!-- 화면 상단에 나타낼 요소 -->
     <header>
       <nav class="header-nav">
         <div>
-          <a href="./index.html"><h2>영화관리</h2></a>
+          <a href="index.html"><h1>SSAFY USERS</h1></a>
         </div>
         <div>
-          <!-- 검색을 위한 입력 요소-->
           <form action="#">
-            <!-- 값 입력, 값 type 설정 -->
-            <input type="text" placeholder="제목을 입력하세요." />
-            <!-- 값 제출 -->
+            <input type="text" placeholder="이름을 입력하세요" />
             <input type="submit" value="검색" />
           </form>
         </div>
         <div>
-          <span class="nav-menu"><a href="./login.html">로그인</a></span>
+          <span class="nav-menu"><a href="login.html">로그인</a></span>
           <span class="nav-menu"><a href="#">로그아웃</a></span>
-          <span class="nav-menu"><a href="./register.html">회원가입</a></span>
-          <span class="nav-menu"><a href="#">게시판</a></span>
-          <span class="nav-menu"><a href="#">마이페이지</a></span>
+          <span class="nav-menu"><a href="#">정보수정</a></span>
+          <span class="nav-menu"><a href="#">회원탈퇴</a></span>
         </div>
       </nav>
     </header>
     <main class="container">
-      <!-- 메인 컨텐츠 -->
       <section class="content-user-list">
-        <!-- 화면 중앙에 나타낼 내용 -->
-        <h1>영화 목록</h1>
+        <h1>사용자 목록</h1>
         <br />
         <ul class="content-user-list-ul">
           <li>
             <div class="list-item">
               <div>
-                <!--이미지 경로 지정-->
-                <img src="./img/eternals.jpg" alt="이터널스 사진" />
-                <div>이터널스</div>
-                <hr />
+                <img src="img/아이언맨.png" alt="" />
               </div>
-              <div class="movie-info">
+              <div class="user-info">
                 <div>
-                  <div>액션</div>
-                  <div>클로이자오</div>
-                  <div>155분</div>
-                  <input type="submit" value="찜" />
+                  <div>IronMan</div>
+                  <div>토니 스타크</div>
+                  <div>ironman@ssafy.com</div>
+                  <div>53 세</div>
                 </div>
               </div>
             </div>
@@ -59,16 +49,14 @@
           <li>
             <div class="list-item">
               <div>
-                <img src="./img/venom.jpg" alt="베놈2 사진" />
-                <div>베놈 2 : 렛 데어 비 카니지</div>
-                <hr />
+                <img src="img/캡틴.png" alt="" />
               </div>
-              <div class="movie-info">
+              <div class="user-info">
                 <div>
-                  <div>액션</div>
-                  <div>앤디 서키스</div>
-                  <div>97</div>
-                  <input type="submit" value="찜" />
+                  <div>CaptainAmerica</div>
+                  <div>스티브 로저스</div>
+                  <div>CaptainA@ssafy.com</div>
+                  <div>30 세</div>
                 </div>
               </div>
             </div>
@@ -76,16 +64,14 @@
           <li>
             <div class="list-item">
               <div>
-                <img src="./img/parasite.jpg" alt="기생충 사진" />
-                <div>기생충</div>
-                <hr />
+                <img src="img/토르.png" alt="" />
               </div>
-              <div class="movie-info">
+              <div class="user-info">
                 <div>
-                  <div>드라마</div>
-                  <div>봉준호</div>
-                  <div>131</div>
-                  <input type="submit" value="찜" />
+                  <div>Thor</div>
+                  <div>토르</div>
+                  <div>GodOfThunder@ssafy.com</div>
+                  <div>1500 세</div>
                 </div>
               </div>
             </div>
@@ -93,19 +79,14 @@
           <li>
             <div class="list-item">
               <div>
-                <img
-                  src="./img/harrypoter_stone.jpg"
-                  alt="해리포터와 마법사의돌 사진"
-                />
-                <div>해리포터와 마법사의 돌</div>
-                <hr />
+                <img src="img/헐크.png" alt="" />
               </div>
-              <div class="movie-info">
+              <div class="user-info">
                 <div>
-                  <div>판타지</div>
-                  <div>크리스 콜럼버스</div>
-                  <div>152</div>
-                  <input type="submit" value="찜" />
+                  <div>Hulk</div>
+                  <div>브루스 배너</div>
+                  <div>hulk@ssafy.com</div>
+                  <div>54 세</div>
                 </div>
               </div>
             </div>
@@ -113,19 +94,14 @@
           <li>
             <div class="list-item">
               <div>
-                <img
-                  src="./img/harrypoter_room.jpg"
-                  alt="해리포터와 비밀의방 사진"
-                />
-                <div>해리포터와 비밀의 방</div>
-                <hr />
+                <img src="img/블랙위도우.png" alt="" />
               </div>
-              <div class="movie-info">
+              <div class="user-info">
                 <div>
-                  <div>판타지</div>
-                  <div>크리스 콜럼버스</div>
-                  <div>162</div>
-                  <input type="submit" value="찜" />
+                  <div>BlackWidow</div>
+                  <div>나타샤 로마노프</div>
+                  <div>blackwidow@ssafy.com</div>
+                  <div>38 세</div>
                 </div>
               </div>
             </div>
@@ -133,73 +109,33 @@
           <li>
             <div class="list-item">
               <div>
-                <img
-                  src="./img/load_of_ring.jpg"
-                  alt="반지의 제왕: 왕의 귀환 사진"
-                />
-                <div>반지의제왕: 왕의 귀환</div>
-                <hr />
+                <img src="img/울트론.png" alt="" />
               </div>
-              <div class="movie-info">
+              <div class="user-info">
                 <div>
-                  <div>판타지</div>
-                  <div>피터 잭슨</div>
-                  <div>263</div>
-                  <input type="submit" value="찜" />
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="list-item">
-              <div>
-                <img src="./img/dune.jpg" alt="듄 사진" />
-                <div>듄</div>
-                <hr />
-              </div>
-              <div class="movie-info">
-                <div>
-                  <div>모험</div>
-                  <div>드니 뷜뇌브</div>
-                  <div>155</div>
-                  <input type="submit" value="찜" />
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="list-item">
-              <div>
-                <img src="./img/tomb_of_the_river.jpg" alt="강릉 사진" />
-                <div>강릉</div>
-                <hr />
-              </div>
-              <div class="movie-info">
-                <div>
-                  <div>범죄</div>
-                  <div>윤영빈</div>
-                  <div>119</div>
-                  <input type="submit" value="찜" />
+                  <div>Ultron</div>
+                  <div>울트론</div>
+                  <div>ultron@ssafy.com</div>
+                  <div>0 세</div>
                 </div>
               </div>
             </div>
           </li>
         </ul>
       </section>
-      <aside>
-        <h3>찜리스트</h3>
-        <span>아직 찜한 영화가 없습니다.</span>
+      <aside class="content-user-like">
+        <h3>관심 리스트</h3>
+        <div>아직 표시한 사용자가 없습니다...</div>
       </aside>
     </main>
-    <!-- 화면 하단에 나타낼 요소 -->
     <footer>
-      <!-- 리스트 태그-->
       <ul class="footer-list">
         <li><a href="#">개인정보 처리방침</a></li>
         <li><a href="#">이용 약관</a></li>
         <li><a href="#">오시는 길</a></li>
-        <li>&copy; SSAFY 대전_3반_석재륜</li>
+        <li>&copy; SSAFY</li>
       </ul>
     </footer>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>

@@ -23,12 +23,17 @@
           <!--로그인 요청 처리를 위한 입력 받기-->
           <form class="login-form">
             <!-- id, password 에 맞는 입력 , 타입 설정-->
-            <input type="text" placeholder="ID" />
-            <br />
-            <input type="password" placeholder="password" />
-            <br />
-            <button>로그인</button>
-            <button><a href="./register.html">회원가입</a></button>
+            <input id="id" name="id" type="text" placeholder="id" />
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="password"
+            />
+            <button class="login-btn">로그인</button>
+            <button onclick="location.href='register.html'" type="button">
+              회원가입
+            </button>
           </form>
         </div>
       </div>
@@ -41,6 +46,7 @@
         <li><a href="#">오시는 길</a></li>
         <li>&copy; SSAFY 대전_3반_석재륜</li>
       </ul>
+      <script type="text/javascript" src="js/main.js"></script>
     </footer>
   </body>
 </html>
