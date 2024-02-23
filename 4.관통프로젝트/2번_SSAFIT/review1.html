@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>영상상세페이지</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <!-- bootstrap cdn css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="header-nav">
+        <div>
+          <a href="./index.html"><h2 style="margin-top: 1rem">SSAFIT</h2></a>
+        </div>
+      </nav>
+    </header>
+    <h1>운동 영상</h1>
+    <hr class="border border-danger border-1 opacity-75" width="100" />
+    <hr />
+
+    <div class="video-container">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/fh4y5dGZX9c"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <hr />
+
+    <div class="review-button">
+      <button class="write" id="writebutton">글작성</button>
+      <div class="searchbar">
+        <input type="text" placeholder="검색어 입력" class="searchbar input" />
+      </div>
+    </div>
+    <hr />
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">번호</th>
+          <th scope="col">제목</th>
+          <th scope="col">작성자</th>
+          <th scope="col">조회수</th>
+          <th scope="col">작성시간</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td id="table-detail">정말 가슴이 웅장해질 것 같습니다.</td>
+          <td>규빈</td>
+          <td>50</td>
+          <td>2024-01-02</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>여기 원래 치즈볼 맛집 아닌가요?</td>
+          <td>서현</td>
+          <td>80</td>
+          <td>2024-02-17</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>엉엉 날 가져요 형</td>
+          <td>진섭</td>
+          <td>130</td>
+          <td>2024-02-20</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 리뷰 상세 Modal -->
+    <div
+      class="modal fade"
+      id="detailModal"
+      tabindex="-1"
+      aria-labelledby="modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">
+              정말 가슴이 웅장해질 것 같습니다.
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>이 영상보고 수영복 시켰습니다 ㅋ</div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              삭제
+            </button>
+            <button type="button" class="btn btn-primary" id="rewrite">
+              수정
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 리뷰 수정 Modal -->
+    <div
+      class="modal fade"
+      id="rewriteModal"
+      tabindex="-1"
+      aria-labelledby="modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">리뷰를 재작성해주세요!</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="modal-body-title" placeholder="제목" />
+            <hr />
+            <input type="text" id="modal-body-content" placeholder="내용" />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              취소
+            </button>
+            <button type="button" class="btn btn-primary">수정</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 리뷰 등록 Modal -->
+    <div
+      class="modal fade"
+      id="reviewModal"
+      tabindex="-1"
+      aria-labelledby="modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">리뷰를 작성해주세요!</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <input type="text" id="modal-body-title" placeholder="제목" />
+            <hr />
+            <input type="text" id="modal-body-content" placeholder="내용" />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              취소
+            </button>
+            <button type="button" class="btn btn-primary">저장</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- bootstrap cdn js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/write.js"></script>
+    <!--페이지 넘기기-->
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <hr />
+  </body>
+</html>

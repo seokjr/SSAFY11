@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <title>SSAFIT</title>
+  </head>
+  <body>
+    <!-- 화면 상단에 나타낼 요소 -->
+    <header>
+      <nav class="header-nav">
+        <div>
+          <a href="./index.html"><h2 style="margin-top: 1rem">SSAFIT</h2></a>
+        </div>
+        <div>
+          <span class="nav-menu"><a href="#">헬스장찾기</a></span>
+          <span class="nav-menu"><a href="./login.html">로그인</a></span>
+          <span class="nav-menu"><a href="./register.html">회원가입</a></span>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <!-- 메인 컨텐츠 -->
+      <section class="content-movie-list">
+        <div class="searchbar" style="margin-top: 1rem">
+          <!-- 검색을 위한 입력 요소-->
+          <form action="#">
+            <!-- 값 입력, 값 type 설정 -->
+            <img class="searchimg" src="./assets/img/search.png" alt="돋보기" />
+            <input type="text" placeholder="제목을 입력하세요." />
+            <!-- 값 제출 -->
+            <button style="padding: 1px" type="button" class="btn btn-primary">
+              검색
+            </button>
+          </form>
+        </div>
+        <!-- 화면 중앙에 나타낼 내용 -->
+        <article class="least-most-view">
+          <h5 style="margin-top: 1rem">
+            <strong>최근 가장 많이 본 영상</strong>
+          </h5>
+          <ul class="content-video-list-ul">
+            <li>
+              <div
+                OnClick="location.href ='./review1.html'"
+                style="cursor: pointer"
+                class="list-item"
+              >
+                <div>
+                  <img src="./assets/img/pushup.PNG" alt="푸시업 사진" />
+                </div>
+                <div class="video-info">
+                  <div>
+                    <div class="video-name">푸쉬업'제발'이렇게만 하세요!</div>
+                    <hr />
+                    <div class="video-genre">운동 부위 : 가슴운동</div>
+                    <div class="video-director">유튜버 : 핏블리</div>
+                    <div class="video-clicks">조회수 : 322만회</div>
+                  </div>
+                  <button class="jjim" onclick="jjim2()" type="button">
+                    찜
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                OnClick="location.href ='./review2.html'"
+                style="cursor: pointer"
+                class="list-item"
+              >
+                <div>
+                  <img src="./assets/img/lowerbody.PNG" alt="하체 사진" />
+                </div>
+                <div class="video-info">
+                  <div>
+                    <div class="video-name">저는 '하체'식주의자 입니다..</div>
+                    <hr />
+                    <div class="video-genre">운동 부위 : 하체운동</div>
+                    <div class="video-director">유튜버 : 김종국</div>
+                    <div class="video-clicks">조회수 : 220만회</div>
+                  </div>
+                  <button class="jjim" onclick="jjim2()" type="button">
+                    찜
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                OnClick="location.href ='./review3.html'"
+                style="cursor: pointer"
+                class="list-item"
+              >
+                <div>
+                  <img
+                    src="./assets/img/benchpress.PNG"
+                    alt="벤치프레스 사진"
+                  />
+                </div>
+                <div class="video-info">
+                  <div>
+                    <div class="video-name">
+                      완벽한 벤치프레스 강의[운동의 정석]
+                    </div>
+                    <hr />
+                    <div class="video-genre">운동 부위 : 가슴운동</div>
+                    <div class="video-director">유튜버 : 피지컬갤러리</div>
+                    <div class="video-clicks">조회수 : 154만회</div>
+                  </div>
+                  <button class="jjim" onclick="jjim2()" type="button">
+                    찜
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </article>
+        <article class="excercise-part-video">
+          <h5 style="margin-top: 1rem"><strong>운동 부위 선택</strong></h5>
+          <div>
+            <button type="button" class="btn btn-outline-primary btn-sm">
+              어깨
+            </button>
+            <button type="button" class="btn btn-outline-primary btn-sm">
+              가슴
+            </button>
+            <button type="button" class="btn btn-outline-primary btn-sm">
+              등
+            </button>
+            <button type="button" class="btn btn-outline-primary btn-sm">
+              하체
+            </button>
+          </div>
+          <br />
+          <ul class="content-video-list-ul">
+            <li>
+              <div
+                OnClick="location.href ='./review4.html'"
+                style="cursor: pointer"
+                class="list-item"
+              >
+                <div>
+                  <img
+                    src="./assets/img/sidelatteralraise.PNG"
+                    alt="사레레 사진"
+                  />
+                </div>
+                <div class="video-info">
+                  <div>
+                    <div class="video-name">
+                      조교 김계란과 사이드레터럴레이즈를 ..
+                    </div>
+                    <hr />
+                    <div class="video-genre">운동 부위 : 어깨운동</div>
+                    <div class="video-director">유튜버 : 힙으뜸</div>
+                    <div class="video-clicks">조회수 : 132만회</div>
+                  </div>
+                  <button class="jjim" onclick="jjim2()" type="button">
+                    찜
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                OnClick="location.href ='./review5.html'"
+                style="cursor: pointer"
+                class="list-item"
+              >
+                <div>
+                  <img
+                    src="./assets/img/frontraise.PNG"
+                    alt="프론트레이즈 사진"
+                  />
+                </div>
+                <div class="video-info">
+                  <div>
+                    <div class="video-name">
+                      프론트 레이즈 최고의 그립 알려드립니다
+                    </div>
+                    <hr />
+                    <div class="video-genre">운동 부위 : 어깨운동</div>
+                    <div class="video-director">유튜버 : 설기관</div>
+                    <div class="video-clicks">조회수 : 4.5만회</div>
+                  </div>
+                  <button class="jjim" onclick="jjim2()" type="button">
+                    찜
+                  </button>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                OnClick="location.href ='./review6.html'"
+                style="cursor: pointer"
+                class="list-item"
+              >
+                <div>
+                  <img
+                    src="./assets/img/behindsholderpress.PNG"
+                    alt="비하인드숄더프레스 사진"
+                  />
+                </div>
+                <div class="video-info">
+                  <div>
+                    <div class="video-name">비하인드 넥프레스</div>
+                    <hr />
+                    <div class="video-genre">운동 부위 : 어깨운동</div>
+                    <div class="video-director">유튜버 : 김명섭의 헬스교실</div>
+                    <div class="video-clicks">조회수 : 7.3천회</div>
+                  </div>
+                  <button class="jjim" onclick="jjim2()" type="button">
+                    찜
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+    <!-- 화면 하단에 나타낼 요소 -->
+    <footer>
+      <!-- 리스트 태그-->
+      <ul class="footer-list">
+        <li><a href="#">개인정보 처리방침</a></li>
+        <li><a href="#">이용 약관</a></li>
+        <li><a href="#">오시는 길</a></li>
+        <li>&copy; SSAFY 대전_3반_석재륜_김수아</li>
+      </ul>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
