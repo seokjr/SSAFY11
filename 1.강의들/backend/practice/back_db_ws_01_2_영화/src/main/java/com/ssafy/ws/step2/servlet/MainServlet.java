@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import com.ssafy.ws.step2.dto.Movie;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -54,19 +55,14 @@ public class MainServlet extends HttpServlet{
 //		// 문자열로 전달된 age는 숫자로 변환
 		int runningTime = Integer.parseInt(request.getParameter("runningTime"));
 		
-//		// 전달받은 parameter를 이용해서 User 객체를 생성한다. 
-		Movie movie = new Movie(id, title, director, genre, runningTime);
+		request.setAttribute("id", id);
+		request.setAttribute("title", title);
+		request.setAttribute("director", director);
+		request.setAttribute("genre", genre);
+		request.setAttribute("runningTime", runningTime);
+		
+		RequestDispatcher disp = request.getRequestDispatcher("/regist_result.jsp");
+		disp.forward(request, response);
 		id++;
-		
-//		// 화면에 출력할 데이터를 구성한다. 
-		StringBuilder output = new StringBuilder();
-		
-		output.append("<html><body>").append("<h1>영화 정보</h1>").append(movie.toString()).append("</body></html>");
-		
-		// response 객체를 통해서 생성한 html코드를 출력한다.
-		// 응답이 어떤 타입인지 설정
-		response.setContentType("text/html; charset=UTF-8");
-		response.getWriter().write(output.toString());
-		
 	}
 }
