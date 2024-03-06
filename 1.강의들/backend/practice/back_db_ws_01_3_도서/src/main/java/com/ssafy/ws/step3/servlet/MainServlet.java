@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import com.ssafy.ws.step3.dto.Book;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -43,24 +44,26 @@ public class MainServlet extends HttpServlet {
 	private void doRegist(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 //		// request 객체에서 전달된 parameter를 추출한다.
+		
 		String isbn = request.getParameter("isbn");
 		String title = request.getParameter("title");
-		String director = request.getParameter("author");
-		int price = Integer.parseInt(request.getParameter("price"));
+		String author = request.getParameter("author");
+		String price = request.getParameter("price");
+		int intprice;
+		if (price == null || price.isEmpty()) {
+	        intprice = 0;
+	    } else {
+	    	intprice = Integer.parseInt(price);
+	    }
 		String desc = request.getParameter("desc");
+		
+		request.setAttribute("isbn", isbn);
+		request.setAttribute("title", title);
+		request.setAttribute("author", author);
+		request.setAttribute("price", intprice);
+		request.setAttribute("desc", desc);
 
-//		// 전달받은 parameter를 이용해서 Book 객체를 생성한다. 
-		Book book = new Book(isbn, title, director, price, desc);
-
-//		// 화면에 출력할 데이터를 구성한다. 
-		StringBuilder output = new StringBuilder();
-
-		output.append("<html><body>").append("<h1>입력 내용</h1>").append(book.toString()).append("</body></html>");
-
-		// response 객체를 통해서 생성한 html코드를 출력한다.
-		// 응답이 어떤 타입인지 설정
-		response.setContentType("text/html; charset=UTF-8");
-		response.getWriter().write(output.toString());
-
+		RequestDispatcher disp = request.getRequestDispatcher("/regist_result.jsp");
+		disp.forward(request, response);
 	}
 }
