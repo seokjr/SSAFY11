@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>사용자 정보 사이트</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<!-- 메인화면을 구현하세요 -->
-	<h1>사용자 정보 Cookie&Session에 저장하기</h1>
-	<a href="regist.jsp">회원가입</a>
+	<h1>사용자관리 페이지 JSTL_EL</h1>
+	<a href="regist.jsp">사용자등록</a>
 </body>
 </html>
