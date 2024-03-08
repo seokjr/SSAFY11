@@ -23,7 +23,7 @@ th:nth-child(1) {
 </head>
 <body>
 	<h1>영화 등록 결과</h1>
-	<h2>지금까지 등록한 영화 수 :<%= session.getAttribute("movieCount") %></h2>
+	<h2>지금까지 등록한 영화 수 : ${movieCount}</h2>
 	<h2>등록된 영화 정보</h2>
 	<table>
 		<thead>
@@ -35,22 +35,23 @@ th:nth-child(1) {
 		<tbody>
 			<tr>
 				<td>제목</td>
-				<td><%= request.getAttribute("title") %></td>
+				<td>${movie.title}></td>
 			</tr>
 			<tr>
 				<td>감독</td>
-				<td><%= request.getAttribute("director") %></td>
+				<td>${movie.director}</td>
 			</tr>
 			<tr>
 				<td>장르</td>
-				<td><%= request.getAttribute("genre") %></td>
+				<td>${movie.genre}</td>
 			</tr>
 			<tr>
 				<td>상영 시간</td>
-				<td><%= request.getAttribute("runningTime") %></td>
+				<td>${movie.runningTime}</td>
 			</tr>
 		</tbody>
 	</table>
 	<a href="regist.jsp">추가등록</a>
+	<a href="main?action=list">영화 목록</a>
 </body>
 </html>

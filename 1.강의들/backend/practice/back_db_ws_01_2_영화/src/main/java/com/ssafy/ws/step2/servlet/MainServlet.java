@@ -1,6 +1,8 @@
 package com.ssafy.ws.step2.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.ssafy.ws.step2.dto.Movie;
 
@@ -17,7 +19,8 @@ import jakarta.servlet.http.HttpSession;
 @WebServlet("/main")
 public class MainServlet extends HttpServlet{
 	//코드를 작성하세요
-	static int id;
+	private int id;
+	private static List<Movie> movieList = new ArrayList<>();
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -41,9 +44,21 @@ public class MainServlet extends HttpServlet{
 		case "regist":
 			doRegist(request, response);
 			break;
+		case "list":
+			doList(request, response);
+			break;
 		}
 	}
 	
+	private void doList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setAttribute("movies", movieList);
+		request.setAttribute("movieCount", id);
+		
+		// forward를 통해 list.jsp 호출
+		RequestDispatcher disp = request.getRequestDispatcher("/list.jsp");
+		disp.forward(request, response);
+	}
+
 	private void doRegist(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 //		// request 객체에서 전달된 parameter를 추출한다.
@@ -54,14 +69,13 @@ public class MainServlet extends HttpServlet{
 		String director = request.getParameter("director");
 		String genre = request.getParameter("genre");
 		int runningTime = Integer.parseInt(request.getParameter("runningTime"));
+		Movie movie = new Movie(++id, title, director, genre, runningTime);
+		
+		movieList.add(movie);
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("movieCount", id++);
-		
-		request.setAttribute("title", title);
-		request.setAttribute("director", director);
-		request.setAttribute("genre", genre);
-		request.setAttribute("runningTime", runningTime);
+		session.setAttribute("movie", movie);
+		session.setAttribute("movieCount", id);
 		
 		RequestDispatcher disp = request.getRequestDispatcher("/regist_result.jsp");
 		disp.forward(request, response);
