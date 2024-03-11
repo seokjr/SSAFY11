@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- bean definitions here -->
+	<!-- 풀패키지명 -->
+	<bean class="com.ssafy.di.Desktop" id="desktop"></bean>
+	<!-- <bean class="com.ssafy.di.Programmer" id="programmer">
+	생성을 어디서 할지 말해주면 되기도 한다.
+		<constructor-arg ref="desktop"></constructor-arg>
+	</bean> -->
+
+	<bean class="com.ssafy.di.Programmer" id="programmer">
+		<!-- setter의 이름 -->
+		<property name="computer" ref="desktop"></property>
+	</bean>
+</beans>
