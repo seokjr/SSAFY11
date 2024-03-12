@@ -1,0 +1,15 @@
+package com.ssafy.ws;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Audience {
+	// 코드작성
+	@Autowired
+	Movie movie;
+	public void printMovieGenre() {
+		System.out.println(movie.getGenre() + "를 관람합니다.");
+	}
+}
