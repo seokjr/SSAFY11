@@ -1,0 +1,11 @@
+SELECT * FROM movie;
+SELECT title FROM movie;
+SELECT * FROM movie WHERE title = "이터널스";
+SELECT * FROM movie WHERE title LIKE "해리%";
+SELECT * FROM movie WHERE title LIKE "%포터%";
+SELECT title FROM movie WHERE id in ("1000", "1004");
+SELECT UPPER('touppercase') as 대문자;
+SELECT CONCAT("해리포터와", "마법사의 돌") AS 연결;
+SELECT SUBSTRING(title, 1, 2) AS "두 글자" FROM movie WHERE YEAR(ReleaseDate) > 2017;
+SELECT REPLACE(title, "해리포터", "말포이") as "영화 제목" FROM movie WHERE title LIKE "%해리%";
+SELECT ROUND(PI(), 2);
