@@ -1,0 +1,11 @@
+SELECT * FROM movie;
+SELECT COUNT(*) as "영화 수" FROM movie;
+SELECT AVG(runningtime) as "평균" FROM movie;
+SELECT SUM(runningtime) as "총 합" FROM movie;
+SELECT ROUND(AVG(runningtime),2) as "포터평균" FROM movie WHERE title LIKE "%포터%";
+SELECT cinemacode, COUNT(*) as "수" FROM movie GROUP BY cinemacode; 
+SELECT cinemacode, MIN(releasedate) as "날짜" FROM movie GROUP BY cinemacode;
+SELECT cinemacode, MAX(runningtime) as "최대" FROM movie GROUP BY cinemacode;
+SELECT cinemacode, AVG(runningtime) as "평균" FROM movie GROUP BY cinemacode HAVING AVG(runningtime) >= 150;
+SELECT cinemacode, SUM(runningtime) as "합" FROM movie GROUP BY cinemacode HAVING SUM(runningtime) >= 300;
+SELECT cinemacode, AVG(runningtime) as "평균", SUM(runningtime) as "합" FROM movie GROUP BY cinemacode HAVING AVG(runningtime) >= 150 AND SUM(runningtime) >= 300;
